@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammar Corrector App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <script src="https://unpkg.com/compromise@14/builds/compromise.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Grammar Corrector for Text in Images or Input</h1>
+            <p>Upload an image or enter text. Use local server for best results (see instructions).</p>
+        </header>
+        <section id="input-section">
+            <label for="image-upload">Upload Image (PNG/JPG):</label>
+            <input type="file" id="image-upload" accept="image/*">
+            <br><br>
+            <label for="text-input">Or Enter Text:</label>
+            <textarea id="text-input" rows="5" placeholder="Type or paste text here..."></textarea>
+            <br>
+            <button id="correct-button">Correct Grammar</button>
+        </section>
+        <section id="results-section" style="display: none;">
+            <h2>Results:</h2>
+            <div>
+                <strong>Original Text:</strong>
+                <p id="original-text"></p>
+            </div>
+            <div>
+                <strong>Corrected Text:</strong>
+                <p id="corrected-text"></p>
+            </div>
+            <h3>Suggestions (Grammarly-Style):</h3>
+            <ul id="suggestions-list"></ul>
+            <h3>Style Insights:</h3>
+            <p id="style-insights"></p>
+            <button id="pronounce-button">Pronounce Corrected Text</button>
+            <button id="copy-button">Copy Corrected Text</button>
+            <div id="error-message" style="color: red;"></div>
+            <div id="info-message" style="color: green;"></div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
